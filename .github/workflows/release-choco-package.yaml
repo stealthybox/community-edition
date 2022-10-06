@@ -13,7 +13,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3.1.0
       - name: Get the Tag
         id: get_version
         shell: bash
@@ -44,7 +44,7 @@ jobs:
           git config --global pull.rebase true
           git config --global url."https://git:${GITHUB_TOKEN}@github.com".insteadOf "https://github.com"
       - name: Check out code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3.1.0
       - name: Commit Choco Metadata
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_ACCESS_TOKEN }}
@@ -63,7 +63,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3.1.0
       - name: Get the Tag
         id: get_version
         shell: bash
